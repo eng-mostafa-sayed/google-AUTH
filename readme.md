@@ -11,9 +11,15 @@
 > express framework
 > nodeJS
 > google authentication
+> express-sessions
 
 ### Functions
 
-> ---
+> **isLoggedIn** middleware function to check if user logged in or not
+> **listening** the running function of my app
 
-### how to use if
+### instructions
+
+> to run this app use npm start
+> make sure that you had installed nodemon before
+> you can run with the ordinary command 'node index'
