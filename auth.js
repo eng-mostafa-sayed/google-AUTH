@@ -1,5 +1,5 @@
 const passport = require("passport");
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+var GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 //my constant about my oauth from google developer api
 const GOOGLE_CLIENT_ID =
@@ -13,15 +13,15 @@ passport.use(
             clientSecret: GOOGLE_CLIENT_SECRET,
 
             //if authentecated goto this
-            callbackURL: "http://localhost:5000/adminpanel",
+            callbackURL: "/google/callback",
+            passReqToCallback: true,
         },
-        function(accessToken, refreshToken, profile, cb) {
+        function(request, accessToken, refreshToken, profile, done) {
             //the incoming for work with DB
-            /* User.findOrCreate({ googleId: profile.id }, function(err, user) {
-                                        return cb(err, user);
-                                     });*/
-
-            return done(err, profile);
+            /*  User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return done(err, user);
+    });*/
+            return done(null, profile);
         }
     )
 );
