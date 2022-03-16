@@ -52,6 +52,7 @@ app.get("/auth/failure", (req, res) => {
     res.send(`something went wrong ....`);
 });
 
+//logout function + not implemented to be shown + if delete the session data
 app.get("/logout", (req, res) => {
     req.logout();
     req.session.destroy();
