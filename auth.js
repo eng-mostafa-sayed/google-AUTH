@@ -6,13 +6,13 @@ const GOOGLE_CLIENT_ID =
     "761743576842-gv018uiuinrs3gdt7omu67qg140gbkg2.apps.googleusercontent.com";
 const GOOGLE_CLIENT_SECRET = "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";
 
-//authentecation configration
+//authentication configration
 passport.use(
     new GoogleStrategy({
             clientID: GOOGLE_CLIENT_ID,
             clientSecret: GOOGLE_CLIENT_SECRET,
 
-            //if authentecated goto this
+            //if authenticated goto this
             callbackURL: "/google/callback",
             passReqToCallback: true,
         },
